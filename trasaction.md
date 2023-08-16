@@ -18,4 +18,8 @@ PlatformTransactionManager(interface)
 
 AbstractPlatformTransactionManager(abstract class)
 - PlatformTransactionManager를 구현한 추상 클래스
-
+- 이 클래스를 DataSource, Hibernate, Jta, Jdo 가 상속받는다.
+- commit, rollback메서드가 템플릿 메서드 디자인 패턴으로 구현되어 있다. (일반적인 로직과 상태 체크를 확인하고, 실제 커밋은 서브클래스들이 구현)
+- 코드에 대한 공부를 하기 위한 목적이니까 commit, rollback의 코드를 살펴보자
+- handle propagation 과 non-transactional behavior check하는 getTransaction()메서드가 존재
+- 
