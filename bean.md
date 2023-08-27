@@ -20,9 +20,29 @@ java.beans.PropertyEditorManager(class)
 - registerEditor(Class<?> targetType, Class<?> editorClass): 지정된 타입의 속성 값을 편집하는 데 사용할 PropertyEditor 객체를 등록
 - PropertyEditor editor = PropertyEditorManager.findEditor(Class<?> targetType);
 
+BeanFactory(interface)
+- Bean을 생성, 관리, 조회
+- (0.9버전에 존재하는 메서드)
+  - getBean(String name) : 주어진 빈 이름의 인스턴스(공유되거나 독립적일 수 있음)을 반환
+  - getBean(String name, Class requiredType) : 빈이 일치해야 할 유형을 추가적으로 요구
+  - isSingleton(String name) : 싱글톤 객체인지 확인
+  - getAliases(String name) : 빈 이름의 별칭 반환
+- (0.9버전 이후에 존재하는 메서드)
+  - getBean(String beanName): 지정된 Bean 이름의 Bean을 조회
+  - getBean(Class<?> beanClass): 지정된 Bean 클래스의 Bean을 조회
+  - getBeansOfType(Class<?> beanClass): 지정된 Bean 클래스의 모든 Bean을 조회
+  - createBean(String beanName): 지정된 Bean 이름의 Bean을 생성
+  - createBean(Class<?> beanClass): 지정된 Bean 클래스의 Bean을 생성
+  - registerBeanDefinition(String beanName, BeanDefinition beanDefinition): 지정된 Bean 이름과 BeanDefinition을 등록
+  - removeBeanDefinition(String beanName): 지정된 Bean 이름의 BeanDefinition을 제거
+
+그러면 0.9에서는 빈을 어떻게 생성한거지?
+
 InitializingBean(interface)
 - 자신의 모든 프로퍼티가 BeanFactory에 의해 설정된 후에 반응해야 하는 빈들이 구현해야 하는 인터페이스
 - 예를 들어 초기화를 수행하거나, 단순히 필수 프로퍼티가 모두 설정되었는지 확인하는 데 사용
 - 스프링 프레임워크는 이 인터페이스를 구현한 빈 객체의 초기화 메서드를 자동으로 호출합니다.
 - afterPropertiesSet() 메서드는 BeanFactory가 모든 속성을 설정한 후 호출. 초기화 작업이 실패하면 Exception을 throw
+
+
 
