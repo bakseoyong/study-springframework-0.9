@@ -21,7 +21,15 @@ java.beans.PropertyEditorManager(class)
 - PropertyEditor editor = PropertyEditorManager.findEditor(Class<?> targetType);
 
 java.beans.PropertyChangeListener
-- 
+- propertyChange(PropertyChangeEvent evt) : 프로퍼티 값이 변경될 때 호출되며, PropertyChangeEvent 객체를 매개변수로 받는다.
+
+java.beans.PropertyChangeEvent
+- 변경된 프로퍼티의 이름 (getPropertyName() 메서드로 확인 가능)
+- 변경 전의 값 (getOldValue() 메서드로 확인 가능)
+- 변경 후의 값 (getNewValue() 메서드로 확인 가능)
+- 변경이 발생한 소스 객체 (getSource() 메서드로 확인 가능)
+- java.beans.PropertyChangeSupport와의 관계
+  - PropertyChangeSupport 클래스를 통해 리스너에게 전달될 때, 리스너는 PropertyChangeEvent 객체를 통해 프로퍼티 변경에 대한 상세 정보를 확인
 
 java.beans.PropertyDescriptor
 java.beans.VetoableChangeListener
