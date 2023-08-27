@@ -20,6 +20,13 @@ java.beans.PropertyEditorManager(class)
 - registerEditor(Class<?> targetType, Class<?> editorClass): 지정된 타입의 속성 값을 편집하는 데 사용할 PropertyEditor 객체를 등록
 - PropertyEditor editor = PropertyEditorManager.findEditor(Class<?> targetType);
 
+java.beans.PropertyChangeListener
+- 
+
+java.beans.PropertyDescriptor
+java.beans.VetoableChangeListener
+
+
 BeanFactory(interface)
 - Bean을 조회 (생성, 관리는 이후 버전)
 - (0.9버전에 존재하는 메서드)
