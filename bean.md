@@ -19,3 +19,10 @@ java.beans.PropertyEditorManager(class)
 - findEditor(Class<?> targetType): 지정된 타입의 속성 값을 편집하는 데 사용할 PropertyEditor 객체를 반환
 - registerEditor(Class<?> targetType, Class<?> editorClass): 지정된 타입의 속성 값을 편집하는 데 사용할 PropertyEditor 객체를 등록
 - PropertyEditor editor = PropertyEditorManager.findEditor(Class<?> targetType);
+
+InitializingBean(interface)
+- 자신의 모든 프로퍼티가 BeanFactory에 의해 설정된 후에 반응해야 하는 빈들이 구현해야 하는 인터페이스
+- 예를 들어 초기화를 수행하거나, 단순히 필수 프로퍼티가 모두 설정되었는지 확인하는 데 사용
+- 스프링 프레임워크는 이 인터페이스를 구현한 빈 객체의 초기화 메서드를 자동으로 호출합니다.
+- afterPropertiesSet() 메서드는 BeanFactory가 모든 속성을 설정한 후 호출. 초기화 작업이 실패하면 Exception을 throw
+
