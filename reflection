@@ -1,0 +1,11 @@
+java.lang.reflect.InvocationHandler(interface)
+- InvocationHandler는 자바에서 프록시 객체를 만들 때, 원본 객체의 메서드 호출을 가로채고 제어할 수 있는 메커니즘을 제공
+- invoke(Object proxy, Method method, Object[] args): 프록시 객체의 메서드 호출을 처리
+
+java.lang.reflect.Method
+- 
+
+java.lang.reflect.Proxy(class)
+- 동적 프록시(dynamic proxy) 객체를 생성하는 클래스
+  - 동적 프록시는 런타임에 인터페이스의 구현체를 자동으로 생성하는 방식으로 동작
+  - 주로 프록시 패턴이나 AOP(Aspect-Oriented Programming)와 같은 개념을 구현할 때 사용
